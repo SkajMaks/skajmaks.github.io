@@ -153,29 +153,44 @@
   <div class="noise-texture"></div>
 
   <!-- Navigation -->
-  <nav class="fixed top-0 w-full z-[60] bg-[#131313]/60 backdrop-blur-xl flex justify-between items-center px-6 md:px-12 py-6">
+ <nav class="fixed top-0 w-full z-[60] bg-[#131313]/60 backdrop-blur-xl px-6 md:px-12 py-6">
+  <div class="flex justify-between items-center">
     <a href="index.html"
-    class="text-2xl font-headline font-bold tracking-tighter text-primary hover:opacity-80 transition">
-    Piotr&nbsp;Wojtaszczyk
+       class="text-2xl font-headline font-bold tracking-tighter text-primary text-glow hover:opacity-80 transition">
+      Piotr&nbsp;Wojtaszczyk
     </a>
 
+    <!-- desktop -->
     <div class="hidden md:flex gap-12 font-headline font-bold tracking-tight">
-  <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="#texts">Teksty</a>
-  <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="#graphics">Grafika</a>
-  <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="#photos">Zdjęcia</a>
-  <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="#commentary">Komentarz</a>
-  <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="#projects">Projekty</a>
+      <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="#texts">Teksty</a>
+      <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="#graphics">Grafika</a>
+      <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="#photos">Zdjęcia</a>
+      <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="#commentary">Komentarz</a>
+      <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="#projects">Projekty</a>
+      <a class="text-primary text-glow hover:opacity-80 transition" href="cv.html">CV</a>
+    </div>
 
-  <!-- CV -->
-  <a class="text-primary text-glow hover:opacity-80 transition" href="cv.html">
-    CV
-  </a>
-</div>
+    <!-- mobile button -->
+    <button id="mobile-menu-button"
+            class="md:hidden text-primary flex items-center justify-center"
+            aria-label="Otwórz menu">
+      <span class="material-symbols-outlined text-[30px]">menu</span>
+    </button>
+  </div>
 
-    <a href="mailto:wojtaszczyk71@gmail.com" class="bg-primary-container text-on-primary-container px-6 py-2 font-headline font-bold rounded-lg hover:scale-95 duration-200 transition-transform">
-      Kontakt
-    </a>
-  </nav>
+  <!-- mobile menu -->
+  <div id="mobile-menu"
+       class="hidden md:hidden mt-6 border border-[#E5E2E1]/10 rounded-xl bg-surface-container-low p-4">
+    <div class="flex flex-col gap-4 font-headline font-bold tracking-tight">
+      <a class="text-[#E5E2E1]/80 hover:text-[#ADC7FF] transition-colors duration-300" href="#texts">Teksty</a>
+      <a class="text-[#E5E2E1]/80 hover:text-[#ADC7FF] transition-colors duration-300" href="#graphics">Grafika</a>
+      <a class="text-[#E5E2E1]/80 hover:text-[#ADC7FF] transition-colors duration-300" href="#photos">Zdjęcia</a>
+      <a class="text-[#E5E2E1]/80 hover:text-[#ADC7FF] transition-colors duration-300" href="#commentary">Komentarz</a>
+      <a class="text-[#E5E2E1]/80 hover:text-[#ADC7FF] transition-colors duration-300" href="#projects">Projekty</a>
+      <a class="text-primary text-glow hover:opacity-80 transition" href="cv.html">CV</a>
+    </div>
+  </div>
+</nav>
 
   <main class="min-h-screen pt-32 pb-12 px-6 md:px-12 flex flex-col max-w-[1920px] mx-auto">
     <!-- Hero Section -->
