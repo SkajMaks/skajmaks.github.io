@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html class="dark" lang="pl">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>CV — Piotr Wojtaszczyk</title>
+  <meta name="description" content="CV Piotra Wojtaszczyka — doświadczenie, edukacja, umiejętności i kontakt." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary": "#193053",
+            "on-error": "#690005",
+            "outline-variant": "#44474e",
+            "error-container": "#93000a",
+            "surface-dim": "#131313",
+            "primary-fixed": "#d8e2ff",
+            "on-tertiary-container": "#b2755b",
+            "secondary-container": "#31476b",
+            "on-surface-variant": "#c4c6cf",
+            "surface-tint": "#adc7ff",
+            "surface": "#131313",
+            "secondary": "#b1c7f2",
+            "background": "#131313",
+            "on-primary-container": "#2180ff",
+            "surface-variant": "#353534",
+            "on-primary": "#002e68",
+            "primary-fixed-dim": "#adc7ff",
+            "on-secondary-container": "#a0b6e0",
+            "inverse-primary": "#005bc0",
+            "primary": "#adc7ff",
+            "on-tertiary": "#4f2410",
+            "secondary-fixed-dim": "#b1c7f2",
+            "on-secondary-fixed-variant": "#31476b",
+            "primary-container": "#001a40",
+            "inverse-surface": "#e5e2e1",
+            "tertiary-fixed-dim": "#fdb698",
+            "on-surface": "#e5e2e1",
+            "on-tertiary-fixed": "#351001",
+            "error": "#ffb4ab",
+            "surface-container-highest": "#353534",
+            "secondary-fixed": "#d6e3ff",
+            "outline": "#8e9099",
+            "on-secondary-fixed": "#001b3d",
+            "tertiary": "#fdb698",
+            "on-background": "#e5e2e1",
+            "surface-container": "#201f1f",
+            "surface-bright": "#3a3939",
+            "surface-container-lowest": "#0e0e0e",
+            "inverse-on-surface": "#313030",
+            "surface-container-high": "#2a2a2a",
+            "on-tertiary-fixed-variant": "#6b3a24",
+            "on-primary-fixed-variant": "#004493",
+            "on-error-container": "#ffdad6",
+            "tertiary-container": "#351001",
+            "surface-container-low": "#1c1b1b",
+            "on-primary-fixed": "#001a41",
+            "tertiary-fixed": "#ffdbcd"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem",
+            "2xl": "1rem"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #131313;
+      color: #e5e2e1;
+      font-family: "Manrope", sans-serif;
+      overflow-x: hidden;
+    }
+
+    .grain {
+      background-image: url("assets/images/photos/pw10.jpg");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.03;
+      pointer-events: none;
+      filter: grayscale(100%);
+    }
+
+    .text-glow {
+      text-shadow: 0 0 20px rgba(173, 199, 255, 0.3);
+    }
+
+    .radial-glow {
+      background: radial-gradient(circle at 50% 50%, rgba(33, 128, 255, 0.15) 0%, transparent 70%);
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
+  <div class="fixed inset-0 grain z-[100]"></div>
+
+  <nav class="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-xl flex justify-between items-center px-6 md:px-12 py-6">
+    <a href="index.html"
+   class="text-2xl font-headline font-bold tracking-tighter text-primary hover:opacity-80 transition">
+  Piotr&nbsp;Wojtaszczyk
+</a>
+
+    <div class="hidden md:flex gap-12 font-headline font-bold tracking-tight">
+      <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="index.html#texts">Teksty</a>
+      <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="index.html#graphics">Grafika</a>
+      <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="index.html#photos">Zdjęcia</a>
+      <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="index.html#commentary">Komentarz</a>
+      <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="index.html#projects">Projekty</a>
+      <!-- CV -->
+  <a class="text-primary text-glow hover:opacity-80 transition" href="cv.html">
+    CV
+  </a>
+    </div>
+
+    <a href="mailto:wojtaszczyk71@gmail.com" class="bg-primary-container text-on-primary-container px-6 py-2 font-headline font-bold rounded-lg hover:scale-95 duration-200 transition-transform">
+      Kontakt
+    </a>
+  </nav>
+
+  <main class="relative pt-32 pb-24 px-6 md:px-12 max-w-[1440px] mx-auto">
+    <!-- HERO -->
+    <section class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-32 items-start">
+      <div class="md:col-span-8">
+        <h1 class="font-headline text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-8">
+          PIOTR <br/>
+          <span class="text-primary text-glow">WOJTASZCZYK</span>
+        </h1>
+
+        <p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-4xl leading-relaxed mb-8">
+          Student informatyki II stopnia na&nbsp;Politechnice Krakowskiej oraz inżynier geoinformatyki.
+          Łączę kompetencje technologiczne, analityczne i&nbsp;medialne — od pracy z&nbsp;danymi, bazami danych
+          i&nbsp;aplikacjami, po dziennikarstwo sportowe, komentarz live, radio i&nbsp;tworzenie treści.
+        </p>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl">
+          <div class="bg-surface-container-low border border-[#E5E2E1]/10 rounded-xl p-5">
+            <p class="font-headline text-primary text-xs font-bold tracking-[0.3em] uppercase mb-2">Edukacja</p>
+            <p class="text-on-surface font-semibold">Informatyka II stopnia</p>
+            <p class="text-on-surface-variant text-sm">Politechnika Krakowska</p>
+          </div>
+
+          <div class="bg-surface-container-low border border-[#E5E2E1]/10 rounded-xl p-5">
+            <p class="font-headline text-primary text-xs font-bold tracking-[0.3em] uppercase mb-2">Specjalizacja</p>
+            <p class="text-on-surface font-semibold">Geoinformatyka / GIS / dane</p>
+            <p class="text-on-surface-variant text-sm">SQL, PostGIS, Python, analiza</p>
+          </div>
+
+          <div class="bg-surface-container-low border border-[#E5E2E1]/10 rounded-xl p-5">
+            <p class="font-headline text-primary text-xs font-bold tracking-[0.3em] uppercase mb-2">Media</p>
+            <p class="text-on-surface font-semibold">Komentarz / radio / tekst</p>
+            <p class="text-on-surface-variant text-sm">Sport, motorsport, content</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-4 flex flex-col items-start md:items-end gap-6">
+        <div class="w-full aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden relative group">
+          <img
+            alt="Piotr Wojtaszczyk"
+            class="w-full h-full object-cover grayscale contrast-125 opacity-90 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700"
+            src="assets/images/photos/ja.png"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-40"></div>
+        </div>
+
+        <a class="flex items-center gap-3 text-primary font-headline tracking-tighter font-bold text-lg hover:gap-5 transition-all"
+           href="assets/pdf/Piotr Wojtaszczyk - CV.pdf"
+           download>
+          POBIERZ PDF CV
+          <span class="material-symbols-outlined">download</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- DOŚWIADCZENIE -->
+    <section class="mb-32">
+    <div class="flex justify-between items-baseline mb-12 border-b border-outline-variant/10 pb-4">
+        <h2 class="font-headline text-4xl font-bold tracking-tighter uppercase">Doświadczenie</h2>
+        <span class="font-label text-primary font-bold tracking-widest text-xs uppercase">EXPERIENCE</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- LEWA KOLUMNA -->
+        <div class="grid grid-cols-1 gap-6">
+
+        <!-- 1. Polski Związek Biathlonu -->
+        <div class="bg-surface-container-low p-10 rounded-xl flex flex-col justify-between group hover:bg-surface-container-high transition-colors duration-500">
+            <div>
+            <div class="flex justify-between items-start mb-8">
+                <span class="font-headline text-primary font-bold text-lg">12.2023 — obecnie</span>
+                <span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors">mic</span>
+            </div>
+
+            <h3 class="font-headline text-3xl font-bold mb-2">Komentator sportowy</h3>
+            <p class="font-body text-on-surface-variant text-lg mb-6">Polski Związek Biathlonu</p>
+            <p class="text-on-surface/70 leading-relaxed mb-8">
+                Komentowanie zawodów biathlonowych rangi krajowej, przygotowanie merytoryczne do transmisji,
+                analiza zawodników, wyników&nbsp;i statystyk, współpraca&nbsp;z organizatorami&nbsp;i zespołem realizacyjnym,
+                prowadzenie relacji&nbsp;na żywo dla publiczności oraz budowanie narracji sportowej&nbsp;w dynamicznym środowisku zawodów.
+            </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Komentarz live</span>
+            <span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Analiza sportowa</span>
+            <span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Narracja</span>
+            </div>
+        </div>
+
+        <!-- 2. SSPK -->
+        <div class="bg-surface-container-low p-10 rounded-xl flex flex-col justify-between group hover:bg-surface-container-high transition-colors duration-500">
+            <div>
+            <div class="flex justify-between items-start mb-8">
+                <span class="font-headline text-primary font-bold text-lg">10.2022 — obecnie</span>
+                <span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors">campaign</span>
+            </div>
+
+            <h3 class="font-headline text-3xl font-bold mb-2">Przewodniczący Komisji Promocji SSPK</h3>
+            <p class="font-body text-on-surface-variant text-lg mb-6">Samorząd Studencki Politechniki Krakowskiej</p>
+            <p class="text-on-surface/70 leading-relaxed mb-8">
+                Zarządzanie kanałami promocji&nbsp;i social mediami, koordynacja pracy zespołu,
+                kontakt z partnerami medialnymi, przygotowywanie materiałów graficznych,
+                organizacja wydarzeń oraz wykonywanie foto-&nbsp;i wideorelacji z działań i inicjatyw samorządu.
+            </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Promocja</span>
+            <span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Social media</span>
+            <span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Zarządzanie zespołem</span>
+            <span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Grafika</span>
+            <span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Wydarzenia</span>
+            <span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Foto / video</span>
+            </div>
+        </div>
+
+        </div>
+
+        <!-- PRAWA KOLUMNA -->
+        <div class="grid grid-cols-1 gap-6">
+
+        <!-- 1. Starterfirm -->
+        <div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-colors">
+            <div class="flex justify-between items-start mb-4">
+            <span class="font-headline text-primary font-bold">06.2025 — 10.2025</span>
+            </div>
+            <h3 class="font-headline text-xl font-bold mb-1">Specjalista ds. marketingu internetowego</h3>
+            <p class="font-body text-on-surface-variant text-sm mb-4">Starterfirm</p>
+            <p class="text-on-surface/60 text-sm leading-relaxed">
+            Optymalizacja stron internetowych pod SEO, analiza i&nbsp;dobór słów kluczowych, tworzenie stron internetowych,
+            publikacja oraz edycja artykułów w CMS, tworzenie treści marketingowych,
+            przygotowywanie artykułów sponsorowanych oraz monitoring wyników działań content marketingowych.
+            </p>
+        </div>
+
+        <!-- 2. Europochette -->
+        <div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-colors">
+            <div class="flex justify-between items-start mb-4">
+            <span class="font-headline text-primary font-bold">07.2022 — 09.2024</span>
+            </div>
+            <h3 class="font-headline text-xl font-bold mb-1">Pracownik biurowy</h3>
+            <p class="font-body text-on-surface-variant text-sm mb-4">Europochette Polska</p>
+            <p class="text-on-surface/60 text-sm leading-relaxed">
+            Bieżąca obsługa biura, współpraca z oddziałami zagranicznymi, kontrola jakości towarów,
+            wystawianie faktur, obsługa zamówień, przygotowywanie ofert i&nbsp;katalogów,
+            utrzymywanie relacji z klientami oraz obsługa strony internetowej w WordPress.
+            </p>
+        </div>
+
+        <!-- 3. Radio Nowinki -->
+        <div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-colors">
+            <div class="flex justify-between items-start mb-4">
+            <span class="font-headline text-primary font-bold">10.2023 — 06.2025</span>
+            </div>
+            <h3 class="font-headline text-xl font-bold mb-1">Prezenter radiowy (wolontariat)</h3>
+            <p class="font-body text-on-surface-variant text-sm mb-4">Radio Nowinki Politechnika Krakowska</p>
+            <p class="text-on-surface/60 text-sm leading-relaxed">
+            Prowadzenie serwisów informacyjnych i sportowych, współprowadzenie audycji tematycznych,
+            przygotowywanie reportaży z wydarzeń kulturalnych i sportowych, redagowanie tekstów radiowych
+            oraz tworzenie materiałów graficznych.
+            </p>
+        </div>
+
+        <!-- 4. Sports in Winter / MotoHigh -->
+        <div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-colors">
+            <div class="flex justify-between items-start mb-4">
+            <span class="font-headline text-primary font-bold">03.2021 — 04.2024 / 02.2022 — 03.2025</span>
+            </div>
+            <h3 class="font-headline text-xl font-bold mb-1">Redaktor</h3>
+            <p class="font-body text-on-surface-variant text-sm mb-4">Sports in Winter / MotoHigh.pl</p>
+            <p class="text-on-surface/60 text-sm leading-relaxed">
+            Redagowanie specjalistycznych tekstów z zakresu sportu, motoryzacji i motorsportu,
+            tworzenie relacji z wydarzeń, wywiadów oraz materiałów reporterskich,
+            research, kontakt z organizacjami sportowymi i współpraca z redakcjami internetowymi.
+            </p>
+        </div>
+
+        <!-- 5. Radio Famka -->
+        <div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-colors">
+            <div class="flex justify-between items-start mb-4">
+            <span class="font-headline text-primary font-bold">12.2024 — 03.2025</span>
+            </div>
+            <h3 class="font-headline text-xl font-bold mb-1">Prezenter radiowy (praktyki studenckie)</h3>
+            <p class="font-body text-on-surface-variant text-sm mb-4">Radio Famka</p>
+            <p class="text-on-surface/60 text-sm leading-relaxed">
+            Przygotowywanie i prowadzenie audycji, opracowywanie danych meteorologicznych do prognoz pogody,
+            nagrywanie i montaż materiałów wideo, obsługa strony internetowej oraz tworzenie grafik komputerowych.
+            </p>
+        </div>
+
+        </div>
+    </div>
+    </section>
+
+    <!-- EDUKACJA + UMIEJĘTNOŚCI -->
+    <section class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-32">
+      <div class="md:col-span-5">
+        <div class="flex justify-between items-baseline mb-12 border-b border-outline-variant/10 pb-4">
+          <h2 class="font-headline text-4xl font-bold tracking-tighter uppercase">Wykształcenie</h2>
+          <span class="font-label text-primary font-bold tracking-widest text-xs uppercase">EDUCATION</span>
+        </div>
+
+        <div class="space-y-12">
+          <div>
+            <p class="font-headline text-primary font-bold mb-1">MAGISTER — INFORMATYKA</p>
+            <h3 class="font-headline text-2xl font-bold">Politechnika Krakowska im. Tadeusza Kościuszki</h3>
+            <p class="text-on-surface-variant text-sm">02.2026 — obecnie</p>
+            <p class="text-on-surface/70 mt-3 leading-relaxed">
+              Kierunek: Systemy Inteligentne i Rozszerzona Rzeczywistość. Zakres obejmuje podstawy uczenia maszynowego,
+              analizę danych, integrację systemów, projektowanie API, pracę z bazami danych,
+              przetwarzanie danych w formacie JSON, wizualizację danych i podstawy przetwarzania obrazu.
+            </p>
+          </div>
+
+          <div>
+            <p class="font-headline text-primary font-bold mb-1">INŻYNIER — GEOINFORMATYKA</p>
+            <h3 class="font-headline text-2xl font-bold">Politechnika Krakowska im. Tadeusza Kościuszki</h3>
+            <p class="text-on-surface-variant text-sm">10.2022 — 02.2026</p>
+            <p class="text-on-surface/70 mt-3 leading-relaxed">
+              Analiza i przetwarzanie danych przestrzennych, GIS, QGIS, PostgreSQL/PostGIS,
+              tworzenie i edycja map cyfrowych, analizy przestrzenne, modelowanie danych geograficznych,
+              podstawy teledetekcji i integracja danych z wielu źródeł.
+            </p>
+          </div>
+
+          <div>
+            <p class="font-headline text-primary font-bold mb-1">SZKOLENIA I CERTYFIKATY</p>
+            <h3 class="font-headline text-2xl font-bold">Wybrane szkolenia</h3>
+            <ul class="text-on-surface/70 mt-3 leading-relaxed space-y-2 list-disc list-inside">
+              <li>Szkolenie z administrowania bazami danych MS SQL Server (2024)</li>
+              <li>Szkolenie ze skanowania laserowego TLS, MLS i technologii UAV (2023)</li>
+              <li>Obóz szkoleniowy Poligon 2024 — ścieżka Promocja</li>
+              <li>Kurs wychowawcy kolonijnego (2022)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-7">
+        <div class="flex justify-between items-baseline mb-12 border-b border-outline-variant/10 pb-4">
+          <h2 class="font-headline text-4xl font-bold tracking-tighter uppercase">Umiejętności</h2>
+          <span class="font-label text-primary font-bold tracking-widest text-xs uppercase">SKILLS</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-surface-container-low p-6 rounded-lg">
+            <h4 class="font-headline font-bold text-primary mb-4 uppercase tracking-tighter">Programowanie i dane</h4>
+            <ul class="space-y-3 font-body text-on-surface/80">
+              <li>Python, R, Matlab, SQL, C/C++</li>
+              <li>Projektowanie i obsługa baz danych</li>
+              <li>PostgreSQL, PostGIS, MS SQL</li>
+              <li>HTML, CSS, JavaScript</li>
+              <li>Tworzenie API i praca z JSON</li>
+            </ul>
+          </div>
+
+          <div class="bg-surface-container-low p-6 rounded-lg">
+            <h4 class="font-headline font-bold text-primary mb-4 uppercase tracking-tighter">GIS i analityka</h4>
+            <ul class="space-y-3 font-body text-on-surface/80">
+              <li>QGIS, analizy przestrzenne</li>
+              <li>Modelowanie danych geograficznych</li>
+              <li>Mapy cyfrowe i wizualizacja danych</li>
+              <li>Integracja danych przestrzennych</li>
+              <li>Podstawy teledetekcji i danych satelitarnych</li>
+            </ul>
+          </div>
+
+          <div class="bg-surface-container-low p-6 rounded-lg">
+            <h4 class="font-headline font-bold text-primary mb-4 uppercase tracking-tighter">Media i komunikacja</h4>
+            <ul class="space-y-3 font-body text-on-surface/80">
+              <li>Redagowanie tekstów i research</li>
+              <li>Komentarz sportowy i radio</li>
+              <li>SEO i content marketing</li>
+              <li>CMS, WordPress, social media</li>
+              <li>Komunikacja z odbiorcami i organizatorami</li>
+            </ul>
+          </div>
+
+          <div class="bg-surface-container-low p-6 rounded-lg">
+            <h4 class="font-headline font-bold text-primary mb-4 uppercase tracking-tighter">Grafika i narzędzia</h4>
+            <ul class="space-y-3 font-body text-on-surface/80">
+              <li>Adobe Illustrator, Photoshop, InDesign</li>
+              <li>Corel Draw</li>
+              <li>Pakiet Microsoft Office</li>
+              <li>Google Tools / poczta / prezentacje</li>
+              <li>AutoCAD, Civil 3D, Surfer, Grapher, Aphelion</li>
+            </ul>
+          </div>
+
+          <div class="bg-surface-container-low p-6 rounded-lg md:col-span-2">
+            <h4 class="font-headline font-bold text-primary mb-4 uppercase tracking-tighter">Języki i kompetencje osobiste</h4>
+            <div class="grid md:grid-cols-2 gap-6">
+              <ul class="space-y-3 font-body text-on-surface/80">
+                <li>Polski — język ojczysty</li>
+                <li>Angielski — B2, czytanie do C1</li>
+                <li>Prawo jazdy kat. B</li>
+              </ul>
+              <ul class="space-y-3 font-body text-on-surface/80">
+                <li>Praca zespołowa i komunikatywność</li>
+                <li>Szybka adaptacja do nowych warunków</li>
+                <li>Umiejętność pracy pod presją czasu</li>
+                <li>Samodzielne rozwiązywanie problemów</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section class="relative bg-surface-container-low rounded-2xl p-12 md:p-24 overflow-hidden">
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] radial-glow -translate-y-1/2 translate-x-1/3"></div>
+
+      <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-12">
+        <div class="text-center md:text-left">
+          <h2 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter mb-6">
+            Kontakt <br/>
+            <span class="text-primary italic">i współpraca</span>
+          </h2>
+          <p class="font-body text-on-surface-variant max-w-md mx-auto md:mx-0">
+            Jestem otwarty na współpracę w&nbsp;obszarze technologii, danych, contentu, mediów,
+            komentarza sportowego i&nbsp;projektów komunikacyjnych.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center md:items-end gap-8">
+          <div class="flex flex-col gap-2 text-center md:text-right">
+            <p class="font-label text-primary font-bold uppercase tracking-widest text-xs">EMAIL</p>
+            <a class="font-headline text-2xl md:text-4xl font-bold hover:text-primary transition-colors" href="mailto:wojtaszczyk71@gmail.com">
+              wojtaszczyk71@gmail.com
+            </a>
+          </div>
+
+          <div class="flex flex-col gap-2 text-center md:text-right">
+            <p class="font-label text-primary font-bold uppercase tracking-widest text-xs">TELEFON</p>
+            <a class="font-headline text-xl md:text-2xl font-bold hover:text-primary transition-colors" href="tel:+48604439175">
+              +48 604 439 175
+            </a>
+          </div>
+
+          <a href="mailto:wojtaszczyk71@gmail.com" class="bg-primary text-on-primary font-headline font-bold px-10 py-5 rounded-lg text-lg hover:shadow-[0_0_30px_rgba(33,128,255,0.4)] transition-all flex items-center gap-3 active:scale-95">
+            NAPISZ DO MNIE
+            <span class="material-symbols-outlined">north_east</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#0E0E0E] w-full py-16 px-6 md:px-12 border-t border-[#ADC7FF]/10">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full max-w-[1440px] mx-auto">
+      <div class="font-['Manrope'] text-sm tracking-wide text-[#E5E2E1]/40">
+        © 2026 Piotr Wojtaszczyk. CV / Portfolio.
+      </div>
+
+          <div class="flex flex-wrap justify-center gap-12 font-headline font-bold text-sm tracking-widest text-[#E5E2E1]/40 mb-16 uppercase">
+      <a class="hover:text-primary transition-all" href="https://www.linkedin.com/in/piotr-wojtaszczyk-7304b3312/">LinkedIn</a>
+    </div>
+    </div>
+  </footer>
+</body>
+</html>

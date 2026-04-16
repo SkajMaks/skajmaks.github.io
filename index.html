@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html class="dark" lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Piotr Wojtaszczyk — Portfolio</title>
+  <meta name="description" content="Portfolio Piotra Wojtaszczyka — teksty, grafiki, fotografie, komentarz sportowy i CV." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed-variant": "#31476b",
+            "on-secondary-fixed": "#001b3d",
+            "surface-container-high": "#2a2a2a",
+            "primary": "#adc7ff",
+            "outline-variant": "#44474e",
+            "on-tertiary-container": "#b2755b",
+            "surface-container-low": "#1c1b1b",
+            "on-error-container": "#ffdad6",
+            "secondary-fixed-dim": "#b1c7f2",
+            "tertiary-container": "#351001",
+            "surface-variant": "#353534",
+            "outline": "#8e9099",
+            "on-secondary-container": "#a0b6e0",
+            "inverse-surface": "#e5e2e1",
+            "surface-bright": "#3a3939",
+            "on-error": "#690005",
+            "inverse-primary": "#005bc0",
+            "surface-container-lowest": "#0e0e0e",
+            "on-primary-fixed": "#001a41",
+            "surface-container": "#201f1f",
+            "primary-container": "#001a40",
+            "on-tertiary-fixed": "#351001",
+            "on-primary-fixed-variant": "#004493",
+            "secondary": "#b1c7f2",
+            "error-container": "#93000a",
+            "on-secondary": "#193053",
+            "secondary-container": "#31476b",
+            "surface-dim": "#131313",
+            "background": "#131313",
+            "on-surface-variant": "#c4c6cf",
+            "surface": "#131313",
+            "surface-tint": "#adc7ff",
+            "on-tertiary-fixed-variant": "#6b3a24",
+            "on-surface": "#e5e2e1",
+            "on-background": "#e5e2e1",
+            "inverse-on-surface": "#313030",
+            "surface-container-highest": "#353534",
+            "on-primary-container": "#2180ff",
+            "tertiary-fixed-dim": "#fdb698",
+            "error": "#ffb4ab",
+            "primary-fixed-dim": "#adc7ff",
+            "tertiary": "#fdb698",
+            "primary-fixed": "#d8e2ff",
+            "tertiary-fixed": "#ffdbcd",
+            "secondary-fixed": "#d6e3ff",
+            "on-tertiary": "#4f2410",
+            "on-primary": "#002e68"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .noise-texture {
+      position: fixed;
+      inset: 0;
+      opacity: 0.04;
+      z-index: 100;
+      pointer-events: none;
+      background-image: url("assets/images/photos/pw10.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(100%);
+    }
+
+    .category-overlay {
+      background: linear-gradient(180deg, rgba(19, 19, 19, 0.2) 0%, rgba(19, 19, 19, 0.85) 100%);
+    }
+
+    .text-glow {
+      text-shadow: 0 0 30px rgba(173, 199, 255, 0.2);
+    }
+
+    .zoomable {
+      cursor: zoom-in;
+    }
+
+    .lightbox-open {
+      overflow: hidden;
+    }
+
+    .lightbox-backdrop {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .media-frame::after {
+      content: "open_in_full";
+      font-family: "Material Symbols Outlined";
+      position: absolute;
+      right: 14px;
+      top: 14px;
+      background: rgba(0, 0, 0, 0.45);
+      color: #e5e2e1;
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 9999px;
+      font-size: 20px;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: 0.25s ease;
+      pointer-events: none;
+    }
+
+    .media-frame:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body overflow-x-hidden">
+  <div class="noise-texture"></div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-[60] bg-[#131313]/60 backdrop-blur-xl flex justify-between items-center px-6 md:px-12 py-6">
+    <a href="index.html"
+    class="text-2xl font-headline font-bold tracking-tighter text-primary hover:opacity-80 transition">
+    Piotr&nbsp;Wojtaszczyk
+    </a>
+
+    <div class="hidden md:flex gap-12 font-headline font-bold tracking-tight">
+  <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="#texts">Teksty</a>
+  <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="#graphics">Grafika</a>
+  <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="#photos">Zdjęcia</a>
+  <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="#commentary">Komentarz</a>
+  <a class="text-[#E5E2E1]/60 hover:text-[#ADC7FF] transition-colors duration-300" href="#projects">Projekty</a>
+
+  <!-- CV -->
+  <a class="text-primary text-glow hover:opacity-80 transition" href="cv.html">
+    CV
+  </a>
+</div>
+
+    <a href="mailto:wojtaszczyk71@gmail.com" class="bg-primary-container text-on-primary-container px-6 py-2 font-headline font-bold rounded-lg hover:scale-95 duration-200 transition-transform">
+      Kontakt
+    </a>
+  </nav>
+
+  <main class="min-h-screen pt-32 pb-12 px-6 md:px-12 flex flex-col max-w-[1920px] mx-auto">
+    <!-- Hero Section -->
+    <header class="text-center mb-16 relative">
+      <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#2180ff]/10 blur-[100px] rounded-full -z-10"></div>
+      <h1 class="font-headline font-bold text-[12vw] md:text-[8vw] leading-[0.9] tracking-tighter text-[#E5E2E1] flex flex-col items-center text-glow">
+        <span>PIOTR</span>
+        <span>WOJTASZCZYK</span>
+      </h1>
+    </header>
+
+        <p class="mt-8 mb-16 max-w-3xl mx-auto text-on-surface-variant text-lg md:text-xl leading-relaxed text-center">
+    Student informatyki II stopnia oraz inżynier geoinformatyki. W&nbsp;mediach działam amatorsko, 
+    ale z pełnym zaangażowaniem i&nbsp;rosnącym doświadczeniem. 
+    Interesuję się sportem, motoryzacją i&nbsp;motorsportem, a&nbsp;także muzyką oraz grami komputerowymi. 
+    Jestem otwarty na współpracę w&nbsp;obszarze technologii, danych, contentu, mediów, komentarza sportowego i&nbsp;projektów komunikacyjnych.
+    Zapraszam do obejrzenia mojego portfolio!
+    </p>
+
+    <!-- Category Overview Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <!-- TEXTS LINK -->
+      <a class="group relative rounded-xl overflow-hidden border border-[#E5E2E1]/10 bg-surface-container-low transition-all duration-500 hover:border-primary/50 flex flex-col aspect-[4/5] md:aspect-[3/4]" href="#texts">
+        <img
+          alt="Zdjęcie do sekcji tekstów"
+          class="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+          src="assets/images/photos/t1.jpg"
+        />
+        <div class="absolute inset-0 category-overlay z-10"></div>
+        <div class="relative z-20 h-full flex flex-col justify-end p-10">
+          <span class="font-headline text-primary text-sm font-bold tracking-[0.3em] mb-4 uppercase">Archive 01</span>
+          <h2 class="font-headline text-5xl font-bold tracking-tighter text-[#E5E2E1] mb-6">TEKSTY</h2>
+          <p class="text-on-surface-variant text-sm leading-relaxed max-w-xs group-hover:text-on-surface transition-colors">
+            Reportaże, wywiady i teksty sportowe. Dłuższe formy o sporcie, motorsporcie i kulisach wydarzeń.
+          </p>
+        </div>
+      </a>
+
+      <!-- GRAPHICS LINK -->
+      <a class="group relative rounded-xl overflow-hidden border border-[#E5E2E1]/10 bg-surface-container-low transition-all duration-500 hover:border-primary/50 flex flex-col aspect-[4/5] md:aspect-[3/4]" href="#graphics">
+        <img
+          alt="Grafika do sekcji graphics"
+          class="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+          src="assets/images/photos/g1.png"
+        />
+        <div class="absolute inset-0 category-overlay z-10"></div>
+        <div class="relative z-20 h-full flex flex-col justify-end p-10">
+          <span class="font-headline text-primary text-sm font-bold tracking-[0.3em] mb-4 uppercase">System 02</span>
+          <h2 class="font-headline text-5xl font-bold tracking-tighter text-[#E5E2E1] mb-6">GRAFIKA</h2>
+          <p class="text-on-surface-variant text-sm leading-relaxed max-w-xs group-hover:text-on-surface transition-colors">
+            Wybrane projekty graficzne, kompozycje i eksperymenty wizualne.
+          </p>
+        </div>
+      </a>
+
+      <!-- PHOTOS LINK -->
+      <a class="group relative rounded-xl overflow-hidden border border-[#E5E2E1]/10 bg-surface-container-low transition-all duration-500 hover:border-primary/50 flex flex-col aspect-[4/5] md:aspect-[3/4]" href="#photos">
+        <img
+          alt="Zdjęcie do sekcji photos"
+          class="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+          src="assets/images/photos/pw2.jpg"
+        />
+        <div class="absolute inset-0 category-overlay z-10"></div>
+        <div class="relative z-20 h-full flex flex-col justify-end p-10">
+          <span class="font-headline text-primary text-sm font-bold tracking-[0.3em] mb-4 uppercase">Lens 03</span>
+          <h2 class="font-headline text-5xl font-bold tracking-tighter text-[#E5E2E1] mb-6">ZDJĘCIA</h2>
+          <p class="text-on-surface-variant text-sm leading-relaxed max-w-xs group-hover:text-on-surface transition-colors">
+            Kadry, światło, struktury i wybrane fotografie z mojego archiwum.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Long card -->
+    <a href="#commentary" class="group relative rounded-xl overflow-hidden border border-[#E5E2E1]/10 bg-surface-container-low transition-all duration-500 hover:border-primary/50 flex flex-col min-h-[240px] md:min-h-[280px] mb-8">
+      <img
+        alt="Komentarz sportowy"
+        class="absolute inset-0 w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+        src="assets/images/photos/k1.jpg"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#131313]/90 via-[#131313]/70 to-[#131313]/85 z-10"></div>
+      <div class="relative z-20 h-full flex flex-col justify-center p-8 md:p-12">
+        <span class="font-headline text-primary text-sm font-bold tracking-[0.35em] mb-4 uppercase">Voice 04</span>
+        <h2 class="font-headline text-4xl md:text-6xl font-bold tracking-tighter text-[#E5E2E1] mb-6">
+          KOMENTARZ SPORTOWY / GŁOS
+        </h2>
+        <p class="text-on-surface-variant text-sm md:text-base leading-relaxed max-w-3xl group-hover:text-on-surface transition-colors">
+          Materiały audio, komentarze, nagrania głosowe i linki do publikacji wideo.
+        </p>
+      </div>
+    </a>
+    <a href="#projects" class="group relative rounded-xl overflow-hidden border border-[#E5E2E1]/10 bg-surface-container-low transition-all duration-500 hover:border-primary/50 flex flex-col min-h-[240px] md:min-h-[280px] mb-16">
+  <img
+    alt="Projekty i aplikacje"
+    class="absolute inset-0 w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+    src="assets/images/photos/a1.png"
+  />
+
+  <div class="absolute inset-0 bg-gradient-to-r from-[#131313]/90 via-[#131313]/70 to-[#131313]/85 z-10"></div>
+
+  <div class="relative z-20 h-full flex flex-col justify-center p-8 md:p-12">
+    <span class="font-headline text-primary text-sm font-bold tracking-[0.35em] mb-4 uppercase">
+      Dev 05
+    </span>
+
+    <h2 class="font-headline text-4xl md:text-6xl font-bold tracking-tighter text-[#E5E2E1] mb-6">
+      PROJEKTY / APLIKACJE
+    </h2>
+
+    <p class="text-on-surface-variant text-sm md:text-base leading-relaxed max-w-3xl group-hover:text-on-surface transition-colors">
+      Projekty programistyczne, aplikacje webowe i rozwiązania oparte na danych — od backendu i baz danych po interfejs użytkownika i eksperymenty frontendowe.
+    </p>
+  </div>
+</a>
+    
+  </main>
+
+  
+
+  <!-- TEXTS SECTION -->
+  <section class="bg-surface-dim py-32 border-t border-[#E5E2E1]/5" id="texts">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+
+    <div class="mb-24">
+      <h3 class="font-headline text-primary font-bold tracking-[0.4em] uppercase text-sm mb-4">
+        Writing &amp; Journalism
+      </h3>
+      <h2 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter">
+        TEKSTY
+      </h2>
+    </div>
+
+    <div class="space-y-24">
+
+      <!-- 01 -->
+      <article class="grid grid-cols-1 md:grid-cols-12 gap-12 group">
+        <div class="md:col-span-4 font-headline text-primary/40 font-bold text-lg">01 // SPORTS IN WINTER</div>
+        <div class="md:col-span-8">
+          <h4 class="font-headline text-3xl md:text-5xl font-bold mb-6 group-hover:text-primary transition-colors">
+            Najgłośniejsze przypadki dopingu w polskim sporcie zimowym
+          </h4>
+          <p class="text-on-surface-variant text-lg mb-8 max-w-2xl">
+            Analiza najbardziej kontrowersyjnych przypadków dopingu w historii polskich sportów zimowych,
+            ukazująca ich konsekwencje nie tylko dla samych zawodników, ale również dla instytucji,
+            opinii publicznej oraz wiarygodności całych dyscyplin.
+          </p>
+          <a href="https://sportsinwinter.pl/pl/13_biegi-narciarskie/94990_najglosniejsze-przypadki-dopingu-w-polskim-sporcie-zimowym.html"
+             target="_blank" class="text-primary font-bold">CZYTAJ →</a>
+        </div>
+      </article>
+
+      <!-- 02 -->
+      <article class="grid grid-cols-1 md:grid-cols-12 gap-12 group">
+        <div class="md:col-span-4 font-headline text-primary/40 font-bold text-lg">02 // REPORTAŻ</div>
+        <div class="md:col-span-8">
+          <h4 class="font-headline text-3xl md:text-5xl font-bold mb-6 group-hover:text-primary transition-colors">
+            Czy to koniec Areny Lodowej w Tomaszowie Mazowieckim? [REPORTAŻ]
+          </h4>
+          <p class="text-on-surface-variant text-lg mb-8 max-w-2xl">
+            Reportaż ukazujący złożoną sytuację infrastrukturalną i organizacyjną jednego z kluczowych
+            ośrodków łyżwiarstwa szybkiego w Polsce, osadzony w kontekście decyzji politycznych,
+            finansowania sportu oraz przyszłości dyscypliny.
+          </p>
+          <a href="https://sportsinwinter.pl/pl/761_lyzwiarstwo-szybkie/99418_czy-to-koniec-areny-lodowej-w-tomaszowie-mazowieckim-reporta-.html"
+             target="_blank" class="text-primary font-bold">CZYTAJ →</a>
+        </div>
+      </article>
+
+      <!-- 03 -->
+      <article class="grid grid-cols-1 md:grid-cols-12 gap-12 group">
+        <div class="md:col-span-4 font-headline text-primary/40 font-bold text-lg">03 // SKOKI NARCIARSKIE</div>
+        <div class="md:col-span-8">
+          <h4 class="font-headline text-3xl md:text-5xl font-bold mb-6 group-hover:text-primary transition-colors">
+            Polacy czule o wsparciu kibiców. „Zostają tylko ci, którzy szczerze wierzą”
+          </h4>
+          <p class="text-on-surface-variant text-lg mb-8 max-w-2xl">
+            Tekst koncentrujący się na relacji między zawodnikami a kibicami,
+            analizujący emocjonalny wymiar sportu oraz rolę wsparcia w momentach kryzysu,
+            spadku formy i presji wyników.
+          </p>
+          <a href="https://sportsinwinter.pl/pl/758_skoki-narciarskie-2/133252_polacy-czule-o-wsparciu-kibicow-zostaja-tylko-ci-ktorzy-szczerze-wierza.html"
+             target="_blank" class="text-primary font-bold">CZYTAJ →</a>
+        </div>
+      </article>
+
+      <!-- 04 -->
+      <article class="grid grid-cols-1 md:grid-cols-12 gap-12 group">
+        <div class="md:col-span-4 font-headline text-primary/40 font-bold text-lg">04 // WYWIAD</div>
+        <div class="md:col-span-8">
+          <h4 class="font-headline text-3xl md:text-5xl font-bold mb-6 group-hover:text-primary transition-colors">
+            Zbigniew Bródka w szoku. Nie spodziewał się takiego sukcesu
+          </h4>
+          <p class="text-on-surface-variant text-lg mb-8 max-w-2xl">
+            Materiał oparty na wypowiedziach mistrza olimpijskiego, ukazujący perspektywę zawodnika
+            wobec nieoczekiwanych wyników, presji sportowej oraz zmieniającej się roli doświadczenia
+            w rywalizacji na najwyższym poziomie.
+          </p>
+          <a href="https://sportsinwinter.pl/pl/746_inne/100500_zbigniew-brodka-w-szoku-nie-spodziewal-sie-takiego-sukcesu.html"
+             target="_blank" class="text-primary font-bold">CZYTAJ →</a>
+        </div>
+      </article>
+
+      <!-- 05 -->
+      <article class="grid grid-cols-1 md:grid-cols-12 gap-12 group">
+        <div class="md:col-span-4 font-headline text-primary/40 font-bold text-lg">05 // WYWIAD</div>
+        <div class="md:col-span-8">
+          <h4 class="font-headline text-3xl md:text-5xl font-bold mb-6 group-hover:text-primary transition-colors">
+            Maciej Kot wrócił do czołówki. „Czerpię garściami, podpatruję”
+          </h4>
+          <p class="text-on-surface-variant text-lg mb-8 max-w-2xl">
+            Rozmowa dotycząca powrotu do wysokiej formy sportowej, procesu odbudowy
+            oraz znaczenia obserwacji i adaptacji w kontekście rywalizacji międzynarodowej.
+          </p>
+          <a href="https://sportsinwinter.pl/pl/758_skoki-narciarskie-2/129146_maciej-kot-wrocil-do-czolowki-czerpie-garsciami-podpatruje.html"
+             target="_blank" class="text-primary font-bold">CZYTAJ →</a>
+        </div>
+      </article>
+
+      <!-- 06 -->
+      <article class="grid grid-cols-1 md:grid-cols-12 gap-12 group">
+        <div class="md:col-span-4 font-headline text-primary/40 font-bold text-lg">06 // MOTOHIGH</div>
+        <div class="md:col-span-8">
+          <h4 class="font-headline text-3xl md:text-5xl font-bold mb-6 group-hover:text-primary transition-colors">
+            Natalia Maliszewska, Artur Michalski i ich miłość do motoryzacji. „F1 to coś więcej niż sport”
+          </h4>
+          <p class="text-on-surface-variant text-lg mb-8 max-w-2xl">
+            Tekst ukazujący przecięcie świata sportów zimowych i motorsportu,
+            analizujący pasję zawodników do Formuły 1 oraz jej wpływ na ich podejście do rywalizacji i technologii.
+          </p>
+          <a href="https://motohigh.pl/2022/09/02/maliszewska-michalski-samochody-motoryzacja-f1/"
+             target="_blank" class="text-primary font-bold">CZYTAJ →</a>
+        </div>
+      </article>
+
+      <!-- 07 -->
+      <article class="grid grid-cols-1 md:grid-cols-12 gap-12 group">
+        <div class="md:col-span-4 font-headline text-primary/40 font-bold text-lg">07 // FORMUŁA 1</div>
+        <div class="md:col-span-8">
+          <h4 class="font-headline text-3xl md:text-5xl font-bold mb-6 group-hover:text-primary transition-colors">
+            Paliwo w Formule 1 – skład, historia, przepisy i problemy
+          </h4>
+          <p class="text-on-surface-variant text-lg mb-8 max-w-2xl">
+            Techniczna analiza paliwa w Formule 1, obejmująca jego ewolucję,
+            regulacje oraz znaczenie w kontekście osiągów, ekologii i przyszłości sportu.
+          </p>
+          <a href="https://motohigh.pl/2022/02/28/paliwo-w-f1-sklad-historia-przepisy-problemy/"
+             target="_blank" class="text-primary font-bold">CZYTAJ →</a>
+        </div>
+      </article>
+
+      <!-- 08 -->
+      <article class="grid grid-cols-1 md:grid-cols-12 gap-12 group">
+        <div class="md:col-span-4 font-headline text-primary/40 font-bold text-lg">08 // ANALIZA F1</div>
+        <div class="md:col-span-8">
+          <h4 class="font-headline text-3xl md:text-5xl font-bold mb-6 group-hover:text-primary transition-colors">
+            F1 GP Las Vegas 2024 – wyniki, analiza i przebieg wyścigu
+          </h4>
+          <p class="text-on-surface-variant text-lg mb-8 max-w-2xl">
+            Szczegółowa analiza wyścigu w Las Vegas, uwzględniająca strategię zespołów,
+            kluczowe momenty rywalizacji oraz wpływ warunków torowych na końcowy rezultat.
+          </p>
+          <a href="https://motohigh.pl/2024/11/24/f1-gp-las-vegas-2024-wyniki-analiza-russell/"
+             target="_blank" class="text-primary font-bold">CZYTAJ →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+  <!-- GRAPHICS SECTION -->
+  <section class="bg-surface-container-lowest py-32 overflow-hidden" id="graphics">
+    <div class="px-6 md:px-12 mb-16">
+      <h3 class="font-headline text-primary font-bold tracking-[0.4em] uppercase text-sm mb-4">Visual Systems</h3>
+      <h2 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter">GRAFIKA</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 px-6 md:px-12">
+      <div class="group">
+        <div class="media-frame relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-high border border-[#E5E2E1]/10">
+          <img src="assets/images/photos/g1.png" alt="Logotyp dla Real Racing League" class="zoomable w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/g1.png" />
+        </div>
+        <p class="mt-4 font-headline font-bold text-sm tracking-wide text-on-surface-variant uppercase">Logotyp dla Real Racing League</p>
+      </div>
+
+      <div class="group">
+        <div class="media-frame relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-high border border-[#E5E2E1]/10">
+          <img src="assets/images/photos/g2.png" alt="Logotyp dla WPT Visuals" class="zoomable w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/g2.png" />
+        </div>
+        <p class="mt-4 font-headline font-bold text-sm tracking-wide text-on-surface-variant uppercase">Logotyp dla WPT Visuals</p>
+      </div>
+
+      <div class="group">
+        <div class="media-frame relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-high border border-[#E5E2E1]/10">
+          <img src="assets/images/photos/g3.jpg" alt="Logotyp dla Radia Nowinki" class="zoomable w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/g3.jpg" />
+        </div>
+        <p class="mt-4 font-headline font-bold text-sm tracking-wide text-on-surface-variant uppercase">Logotyp dla Radia Nowinki</p>
+      </div>
+
+      <div class="group">
+        <div class="media-frame relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-high border border-[#E5E2E1]/10">
+          <img src="assets/images/photos/g4.png" alt="Grafika z kalendarzem" class="zoomable w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/g4.png" />
+        </div>
+        <p class="mt-4 font-headline font-bold text-sm tracking-wide text-on-surface-variant uppercase">Grafika z kalendarzem dla Real Racing League</p>
+      </div>
+
+      <div class="group">
+        <div class="media-frame relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-high border border-[#E5E2E1]/10">
+          <img src="assets/images/photos/g5.jpg" alt="Logotyp dla Real Racing League" class="zoomable w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/g5.jpg" />
+        </div>
+        <p class="mt-4 font-headline font-bold text-sm tracking-wide text-on-surface-variant uppercase">Grafika-miniatura dla Real Racing League</p>
+      </div>
+
+      <div class="group">
+        <div class="media-frame relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-high border border-[#E5E2E1]/10">
+          <img src="assets/images/photos/g6.jpg" alt="Grafika 6" class="zoomable w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/g6.jpg" />
+        </div>
+        <p class="mt-4 font-headline font-bold text-sm tracking-wide text-on-surface-variant uppercase">Projekt strony dla Radia Nowinki</p>
+      </div>
+
+      <div class="group">
+        <div class="media-frame relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-high border border-[#E5E2E1]/10">
+          <img src="assets/images/photos/g7.jpg" alt="Grafika 7" class="zoomable w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/g7.jpg" />
+        </div>
+        <p class="mt-4 font-headline font-bold text-sm tracking-wide text-on-surface-variant uppercase">Projekt graficzny dla Radia Nowinki</p>
+      </div>
+
+      <div class="group">
+        <div class="media-frame relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-high border border-[#E5E2E1]/10">
+          <img src="assets/images/photos/g8.jpg" alt="Grafika 8" class="zoomable w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/g8.jpg" />
+        </div>
+        <p class="mt-4 font-headline font-bold text-sm tracking-wide text-on-surface-variant uppercase">Projekt graficzny dla Radia Nowinki</p>
+      </div>
+
+      <div class="group">
+        <div class="media-frame relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-high border border-[#E5E2E1]/10">
+          <img src="assets/images/photos/g9.png" alt="Grafika 9" class="zoomable w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/g9.png" />
+        </div>
+        <p class="mt-4 font-headline font-bold text-sm tracking-wide text-on-surface-variant uppercase">Infografika</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOS SECTION -->
+  <section class="bg-surface py-32" id="photos">
+    <div class="max-w-[1920px] mx-auto px-6 md:px-12">
+      <div class="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <div>
+          <h3 class="font-headline text-primary font-bold tracking-[0.4em] uppercase text-sm mb-4">Atmospheric Lens</h3>
+          <h2 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter">ZDJĘCIA</h2>
+        </div>
+        <div class="max-w-md text-on-surface-variant font-medium">
+          Wybrane fotografie i kadry z mojego archiwum. Światło, rytm, przestrzeń i detal.
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div class="group">
+          <div class="media-frame relative overflow-hidden rounded-lg bg-surface-container-low border border-[#E5E2E1]/10 aspect-[4/5]">
+            <img src="assets/images/photos/pw1.jpg" alt="Zdjęcie 1" class="zoomable absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/pw1.jpg" />
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="media-frame relative overflow-hidden rounded-lg bg-surface-container-low border border-[#E5E2E1]/10 aspect-[4/5]">
+            <img src="assets/images/photos/pw2.jpg" alt="Zdjęcie 2" class="zoomable absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/pw2.jpg" />
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="media-frame relative overflow-hidden rounded-lg bg-surface-container-low border border-[#E5E2E1]/10 aspect-[4/5]">
+            <img src="assets/images/photos/pw3.jpg" alt="Zdjęcie 3" class="zoomable absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/pw3.jpg" />
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="media-frame relative overflow-hidden rounded-lg bg-surface-container-low border border-[#E5E2E1]/10 aspect-[4/5]">
+            <img src="assets/images/photos/pw4.jpg" alt="Zdjęcie 4" class="zoomable absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/pw4.jpg" />
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="media-frame relative overflow-hidden rounded-lg bg-surface-container-low border border-[#E5E2E1]/10 aspect-[4/5]">
+            <img src="assets/images/photos/pw5.jpg" alt="Zdjęcie 5" class="zoomable absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/pw5.jpg" />
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="media-frame relative overflow-hidden rounded-lg bg-surface-container-low border border-[#E5E2E1]/10 aspect-[4/5]">
+            <img src="assets/images/photos/pw6.jpeg" alt="Zdjęcie 6" class="zoomable absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/pw6.jpeg" />
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="media-frame relative overflow-hidden rounded-lg bg-surface-container-low border border-[#E5E2E1]/10 aspect-[4/5]">
+            <img src="assets/images/photos/pw7.jpeg" alt="Zdjęcie 7" class="zoomable absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/pw7.jpeg" />
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="media-frame relative overflow-hidden rounded-lg bg-surface-container-low border border-[#E5E2E1]/10 aspect-[4/5]">
+            <img src="assets/images/photos/pw8.jpeg" alt="Zdjęcie 8" class="zoomable absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/pw8.jpeg" />
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="media-frame relative overflow-hidden rounded-lg bg-surface-container-low border border-[#E5E2E1]/10 aspect-[4/5]">
+            <img src="assets/images/photos/pw9.jpg" alt="Zdjęcie 9" class="zoomable absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/pw9.jpg" />
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="media-frame relative overflow-hidden rounded-lg bg-surface-container-low border border-[#E5E2E1]/10 aspect-[4/5]">
+            <img src="assets/images/photos/pw10.jpg" alt="Zdjęcie 10" class="zoomable absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/pw10.jpg" />
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="media-frame relative overflow-hidden rounded-lg bg-surface-container-low border border-[#E5E2E1]/10 aspect-[4/5]">
+            <img src="assets/images/photos/pw11.jpg" alt="Zdjęcie 10" class="zoomable absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/pw11.jpg" />
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="media-frame relative overflow-hidden rounded-lg bg-surface-container-low border border-[#E5E2E1]/10 aspect-[4/5]">
+            <img src="assets/images/photos/pw12.jpg" alt="Zdjęcie 10" class="zoomable absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/pw12.jpg" />
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="media-frame relative overflow-hidden rounded-lg bg-surface-container-low border border-[#E5E2E1]/10 aspect-[4/5]">
+            <img src="assets/images/photos/pw13.jpg" alt="Zdjęcie 10" class="zoomable absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/pw13.jpg" />
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="media-frame relative overflow-hidden rounded-lg bg-surface-container-low border border-[#E5E2E1]/10 aspect-[4/5]">
+            <img src="assets/images/photos/pw14.jpg" alt="Zdjęcie 10" class="zoomable absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-lightbox="assets/images/photos/pw14.jpg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMENTARY SECTION -->
+  <section class="bg-surface-container-lowest py-32 border-t border-[#E5E2E1]/5" id="commentary">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+
+    <div class="mb-20">
+      <h3 class="font-headline text-primary font-bold tracking-[0.4em] uppercase text-sm mb-4">
+        Voice &amp; Commentary
+      </h3>
+      <h2 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter">
+        KOMENTARZ SPORTOWY
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 xl:grid-cols-12 gap-8">
+
+      <!-- OPIS -->
+      <div class="xl:col-span-5 bg-surface-container-low border border-[#E5E2E1]/10 rounded-xl p-8 md:p-10">
+        <span class="font-headline text-primary text-sm font-bold tracking-[0.3em] uppercase block mb-4">
+          Experience
+        </span>
+
+        <h4 class="font-headline text-3xl md:text-4xl font-bold tracking-tighter mb-6">
+          Głos, tempo i narracja wydarzenia
+        </h4>
+
+        <div class="space-y-5 text-on-surface-variant leading-relaxed">
+          <p>
+            Komentowałem <span class="text-on-surface font-semibold">ponad 50 wyścigów simracingowych</span>,
+            prowadząc relację na żywo i analizując przebieg rywalizacji w dynamicznym środowisku motorsportu wirtualnego.
+          </p>
+
+          <p>
+            Jestem również <span class="text-on-surface font-semibold">spikerem na zawodach organizowanych przez Polski Związek Biathlonu</span>,
+            gdzie odpowiadam za komunikację z publicznością, zapowiedzi oraz oprawę głosową wydarzeń.
+          </p>
+
+          <p>
+            Komentarz na żywo, relacjonowanie zawodów oraz realizacja materiałów audio.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mt-8">
+          <div class="rounded-lg border border-[#E5E2E1]/10 p-4 bg-surface-container-high/40">
+            <div class="text-3xl font-headline font-bold text-primary mb-1">50+</div>
+            <div class="text-sm uppercase tracking-widest text-on-surface-variant font-headline">
+              wyścigów simracingowych
+            </div>
+          </div>
+
+          <div class="rounded-lg border border-[#E5E2E1]/10 p-4 bg-surface-container-high/40">
+            <div class="text-3xl font-headline font-bold text-primary mb-1">Live</div>
+            <div class="text-sm uppercase tracking-widest text-on-surface-variant font-headline">
+              spiker / komentarz
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEDIA -->
+      <div class="xl:col-span-7 space-y-8">
+
+        <!-- YOUTUBE -->
+        <div class="bg-surface-container-low border border-[#E5E2E1]/10 rounded-xl p-4 md:p-6">
+          <p class="font-headline text-primary text-xs font-bold tracking-[0.3em] uppercase mb-2">
+            Video
+          </p>
+
+          <h4 class="font-headline text-2xl md:text-3xl font-bold tracking-tighter mb-4">
+            Fragment komentarza (live)
+          </h4>
+
+          <div class="relative w-full overflow-hidden rounded-lg border border-[#E5E2E1]/10 bg-black" style="padding-top: 56.25%;">
+            <iframe
+              class="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/H76-yLycb80?start=2570"
+              title="YouTube video player"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- AUDIO -->
+        <div class="bg-surface-container-low border border-[#E5E2E1]/10 rounded-xl p-6">
+          <p class="font-headline text-primary text-xs font-bold tracking-[0.3em] uppercase mb-2">
+            Audio sample
+          </p>
+
+          <h4 class="font-headline text-2xl font-bold mb-4">
+            Próbka głosu
+          </h4>
+
+          <div class="border border-[#E5E2E1]/10 rounded-lg p-4 bg-surface-container-high/30">
+            <audio controls class="w-full">
+              <source src="assets/audio/a1.mp3" type="audio/mpeg">
+              Twoja przeglądarka nie obsługuje audio.
+            </audio>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DÓŁ -->
+    <div class="bg-surface-container-low border border-[#E5E2E1]/10 rounded-xl p-8 mt-12">
+      <h4 class="font-headline text-2xl font-bold mb-4">Zakres pracy</h4>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-on-surface-variant">
+        <div class="border border-[#E5E2E1]/10 rounded-lg p-4">
+          <p class="font-headline font-bold text-on-surface mb-2">Komentarz live</p>
+          <p>Relacja na żywo, analiza i budowanie dynamiki wydarzenia.</p>
+        </div>
+
+        <div class="border border-[#E5E2E1]/10 rounded-lg p-4">
+          <p class="font-headline font-bold text-on-surface mb-2">Spiker zawodów</p>
+          <p>Zapowiedzi, komunikaty i prowadzenie wydarzeń sportowych.</p>
+        </div>
+
+        <div class="border border-[#E5E2E1]/10 rounded-lg p-4">
+          <p class="font-headline font-bold text-on-surface mb-2">Materiały audio</p>
+          <p>Próbki głosu i nagrania komentatorskie.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section id="projects" class="bg-surface-container-lowest py-32">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+
+    <div class="mb-20">
+      <h3 class="font-headline text-primary font-bold tracking-[0.4em] uppercase text-sm mb-4">
+        Development
+      </h3>
+      <h2 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter">
+        PROJEKTY
+      </h2>
+    </div>
+
+    <div class="space-y-16">
+
+      <!-- 01 -->
+      <div class="grid md:grid-cols-2 gap-10 items-start group">
+        <div class="overflow-hidden rounded-xl border border-[#E5E2E1]/10 shadow-lg">
+          <img src="assets/images/photos/a1.png"
+               class="w-full aspect-video object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-500"/>
+        </div>
+
+        <div>
+          <span class="text-primary/40 font-headline text-sm tracking-widest">01&nbsp;</span>
+
+          <h3 class="text-3xl md:text-4xl font-headline font-bold mb-4 mt-2 group-hover:text-primary transition">
+            Aplikacja do analizy obszarów zabudowanych na zdjęciach satelitarnych
+          </h3>
+
+          <p class="text-on-surface-variant leading-relaxed mb-6 text-lg">
+            Webowa aplikacja analityczna wspierająca wykrywanie zabudowy na ortofotomapach i zdjęciach lotniczych.
+            Projekt łączy backend w Pythonie, frontend w React&nbsp;+&nbsp;Leaflet oraz integrację z usługami geoprzestrzennymi,
+            takimi jak ULDK,&nbsp;WMS i&nbsp;WFS. Kluczowym elementem systemu jest moduł AI do identyfikacji budynków, porównywania wyników z danymi referencyjnymi i prezentowania ich
+            w formie interaktywnej analizy mapowej.
+          </p>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="grid md:grid-cols-2 gap-10 items-start group">
+        <div class="overflow-hidden rounded-xl border border-[#E5E2E1]/10 shadow-lg">
+          <img src="assets/images/photos/a3.png"
+               class="w-full aspect-video object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-500"/>
+        </div>
+
+        <div>
+          <span class="text-primary/40 font-headline text-sm tracking-widest">02&nbsp;</span>
+
+          <h3 class="text-3xl md:text-4xl font-headline font-bold mb-4 mt-2 group-hover:text-primary transition">
+            Aplikacja do śledzenia rynku motoryzacyjnego
+          </h3>
+
+          <p class="text-on-surface-variant leading-relaxed mb-6 text-lg">
+            Koncepcyjna platforma do monitorowania rynku motoryzacyjnego, zaprojektowana z myślą o analizie trendów,
+            cen, premier, ogłoszeń oraz aktywności marek i modeli. Aplikacja łączy warstwę informacyjną z panelem
+            analitycznym, umożliwiając szybkie porównywanie danych, obserwowanie zmian na rynku i śledzenie
+            najważniejszych zjawisk w branży automotive.
+          </p>
+
+
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="grid md:grid-cols-2 gap-10 items-start group">
+        <div class="overflow-hidden rounded-xl border border-[#E5E2E1]/10 shadow-lg">
+          <img src="assets/images/photos/a2.png"
+               class="w-full aspect-video object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-500"/>
+        </div>
+
+        <div>
+          <span class="text-primary/40 font-headline text-sm tracking-widest">03&nbsp;</span>
+
+          <h3 class="text-3xl md:text-4xl font-headline font-bold mb-4 mt-2 group-hover:text-primary transition">
+            your.fm
+          </h3>
+
+          <p class="text-on-surface-variant leading-relaxed mb-6 text-lg">
+            Rozszerzenie-aplikacja do Spotify, zaprojektowane jako dodatkowa warstwa personalizacji i&nbsp;odkrywania muzyki.
+            Projekt rozwija klasyczne doświadczenie słuchania o&nbsp;funkcje inteligentnych rekomendacji, własnych statystyk
+            odsłuchu oraz bardziej zaawansowanego zarządzania biblioteką użytkownika.
+          </p>
+
+
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="grid md:grid-cols-2 gap-10 items-start group">
+        <div class="overflow-hidden rounded-xl border border-[#E5E2E1]/10 shadow-lg">
+          <img src="assets/images/photos/a4.png"
+               class="w-full aspect-video object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-500"/>
+        </div>
+
+        <div>
+          <span class="text-primary/40 font-headline text-sm tracking-widest">04&nbsp;</span>
+
+          <h3 class="text-3xl md:text-4xl font-headline font-bold mb-4 mt-2 group-hover:text-primary transition">
+            Dodatek do&nbsp;DSJ4 z trybem kariery i zapisem sezonów
+          </h3>
+
+          <p class="text-on-surface-variant leading-relaxed mb-6 text-lg">
+            Autorski dodatek rozwijający klasyczne Deluxe Ski Jump 4 o&nbsp;pełnoprawny tryb kariery. Projekt wprowadza
+            strukturę sezonów, system progresji, zapis wyników oraz długoterminowy rozwój rozgrywki, nadając grze
+            bardziej rozbudowany, symulacyjno-menedżerski charakter.
+          </p>
+
+          <a href="#" class="text-primary font-bold tracking-wide">
+            ZOBACZ&nbsp;PROJEKT&nbsp;→
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="w-full py-24 px-6 md:px-12 bg-[#0E0E0E] flex flex-col items-center border-t border-[#E5E2E1]/5 text-center">
+    <div class="mb-16">
+      <span class="font-headline font-bold text-4xl tracking-tighter text-[#E5E2E1] block mb-2">Piotr Wojtaszczyk</span>
+      <p class="font-headline text-primary font-bold tracking-[0.3em] uppercase text-xs">Media i Informatyka</p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-12 font-headline font-bold text-sm tracking-widest text-[#E5E2E1]/40 mb-16 uppercase">
+      <a class="hover:text-primary transition-all" href="https://www.linkedin.com/in/piotr-wojtaszczyk-7304b3312/">LinkedIn</a>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center gap-8 justify-between w-full max-w-7xl pt-16 border-t border-[#E5E2E1]/5">
+      <p class="font-['Manrope'] text-sm tracking-wide text-[#E5E2E1]/20">© 2026 Piotr Wojtaszczyk. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+        <span class="font-headline text-xs font-bold tracking-widest text-primary uppercase">Available for new projects</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-[200] hidden">
+    <div id="lightbox-backdrop" class="lightbox-backdrop absolute inset-0 bg-black/85"></div>
+    <button id="lightbox-close" class="absolute top-5 right-5 z-[210] bg-white/10 hover:bg-white/20 text-white rounded-full w-12 h-12 grid place-items-center transition-colors">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="relative z-[205] h-full w-full flex items-center justify-center p-6 md:p-10">
+      <img id="lightbox-image" src="" alt="Podgląd obrazu" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl" />
+    </div>
+  </div>
+
+  <script>
+    const zoomableImages = document.querySelectorAll("[data-lightbox]");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxClose = document.getElementById("lightbox-close");
+    const lightboxBackdrop = document.getElementById("lightbox-backdrop");
+
+    function openLightbox(src, altText = "") {
+      lightboxImage.src = src;
+      lightboxImage.alt = altText;
+      lightbox.classList.remove("hidden");
+      document.body.classList.add("lightbox-open");
+    }
+
+    function closeLightbox() {
+      lightbox.classList.add("hidden");
+      lightboxImage.src = "";
+      document.body.classList.remove("lightbox-open");
+    }
+
+    zoomableImages.forEach((img) => {
+      img.addEventListener("click", () => {
+        openLightbox(img.dataset.lightbox, img.alt || "");
+      });
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightboxBackdrop.addEventListener("click", closeLightbox);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !lightbox.classList.contains("hidden")) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
